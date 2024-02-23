@@ -14,6 +14,13 @@ function slotSearch() {
   $('#loading-row').show();
 
   var form = document.getElementById('slot-search-form');
+
+  var servicetypesarefun = {};
+for (var i = 0; i < form.length; i++) {
+  if (form.elements[i].name.startsWith('service-type')) { continue; }
+  servicetypesarefun[form.elements[i].name] = form.elements[i].value;
+}
+console.log("SlotAreNotFun:", servicetypesarefun); 
     
     var slotParams = {};
 for (var i = 0; i < form.length; i++) {
