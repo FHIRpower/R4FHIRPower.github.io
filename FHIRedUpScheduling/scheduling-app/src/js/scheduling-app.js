@@ -78,7 +78,8 @@ function slotHTML(id, serviceType, start, end, status) {
       prettyStart = new Date(start).toISOString(),
       prettyEnd = new Date(end).toISOString();
       serviceType =  serviceType
-      
+
+      var form = document.getElementById('slot-search-form');
       function getServiceTypeText() {
         // Access the select element
         var serviceTypeElement = form.elements['service-type'];
