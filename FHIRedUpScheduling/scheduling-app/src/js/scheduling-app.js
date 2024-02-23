@@ -92,12 +92,12 @@ function slotHTML(id, serviceType, start, end, status) {
   return "<div class='card'>" +
            "<div class='card-body'>" +
            //changing type to servicetype
-             "<h5 class='card-title'>" + serviceType + '</h5>' +
+             "<h5 class='card-title'>" + selectedServiceTypeText + '</h5>' +
              "<p class='card-text'>Start: " + prettyStart + '</p>' +
              "<p class='card-text'>End: " + prettyEnd + '</p>' +
              "<a href='javascript:void(0);' class='card-link' onclick='askForPatient(\"" +
              //changing type to ServiceType
-               slotReference + '", "' + serviceType + '", "' + prettyStart + '", "' + prettyEnd + "\");'>Book</a>" +
+               slotReference + '", "' + selectedServiceTypeText + '", "' + prettyStart + '", "' + prettyEnd + "\");'>Book</a>" +
            '</div>' +
          '</div>';
 }
