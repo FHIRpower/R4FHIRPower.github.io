@@ -15,20 +15,7 @@ function slotSearch() {
 
   var form = document.getElementById('slot-search-form');
 
-  function getServiceTypeText() {
-    // Access the select element
-    var serviceTypeElement = form.elements['service-type'];
   
-    // Get the selected option
-    var selectedOption = serviceTypeElement.selectedOptions[0];
-  
-    // Return the text content of the selected option
-    return selectedOption.text;
-  }
-  
-  // Usage example:
-  var selectedServiceTypeText = getServiceTypeText();
-  console.log("Selected service type text:", selectedServiceTypeText);
     
     var slotParams = {};
 for (var i = 0; i < form.length; i++) {
@@ -82,12 +69,30 @@ FHIR.oauth2.ready(function(smart) {
   });
 }
 //changing type to servicetype
+
+
+
 function slotHTML(id, serviceType, start, end, status) {
   console.log('Slot: id:[' + id + '] serviceType:[' + serviceType + '] start:[' + start + '] end:[' + end + '] status:[' + status + ']');
   var slotReference = 'Slot/' + id,
       prettyStart = new Date(start).toISOString(),
       prettyEnd = new Date(end).toISOString();
       serviceType =  serviceType
+      
+      function getServiceTypeText() {
+        // Access the select element
+        var serviceTypeElement = form.elements['service-type'];
+      
+        // Get the selected option
+        var selectedOption = serviceTypeElement.selectedOptions[0];
+      
+        // Return the text content of the selected option
+        return selectedOption.text;
+      }
+      
+      // Usage example:
+      var selectedServiceTypeText = getServiceTypeText();
+      console.log("Selected service type text:", selectedServiceTypeText);
       
   return "<div class='card'>" +
            "<div class='card-body'>" +
