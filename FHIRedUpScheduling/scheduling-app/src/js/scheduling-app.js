@@ -14,6 +14,21 @@ function slotSearch() {
   $('#loading-row').show();
 
   var form = document.getElementById('slot-search-form');
+
+  function getServiceTypeText() {
+    // Access the select element
+    var serviceTypeElement = form.elements['service-type'];
+  
+    // Get the selected option
+    var selectedOption = serviceTypeElement.selectedOptions[0];
+  
+    // Return the text content of the selected option
+    return selectedOption.text;
+  }
+  
+  // Usage example:
+  var selectedServiceTypeText = getServiceTypeText();
+  console.log("Selected service type text:", selectedServiceTypeText);
     
     var slotParams = {};
 for (var i = 0; i < form.length; i++) {
